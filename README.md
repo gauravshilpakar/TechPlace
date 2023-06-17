@@ -130,10 +130,10 @@ To get a local copy up and running follow these simple steps.
 ## TODO
 <font size=1>
 
-	[x] Image uploads to DB
-	[ ] Chat functionality
-  [ ] Image Carousel for items
-  
+  - [x] Image uploads to DB
+	- [ ] Chat functionality
+  - [ ] Image Carousel for items
+
 </font>
 
 <!-- LICENSE -->
