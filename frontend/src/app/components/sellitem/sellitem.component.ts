@@ -4,8 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Items } from 'src/app/models/items';
 import { ItemsService } from 'src/app/service/items/items.service';
 import { TokenService } from 'src/app/service/token/token.service';
-import { UserService } from 'src/app/service/user/user.service';
-
 
 @Component({
   selector: 'app-sellitem',
@@ -25,6 +23,8 @@ export class SellitemComponent implements OnInit {
   reactiveForm: FormGroup;
   currentItem: Items | undefined;
   file: File = null;
+  city: string
+  state: string
 
   defaultItem: Items = {
     id: -1,
@@ -34,6 +34,8 @@ export class SellitemComponent implements OnInit {
     availability: true,
     imageUrl: null,
     userId: 0,
+    location: 'City, ST',
+    datePosted: new Date()
   };
 
   async ngOnInit(): Promise<void> {
@@ -48,9 +50,11 @@ export class SellitemComponent implements OnInit {
         this.currentItem = this.defaultItem;
       }
     });
+    [this.city, this.state] = this.currentItem.location.split(',');
   }
 
   onChange(event) {
+    this.currentItem.location = `${this.city}, ${this.state}`;
     this.file = event.target.files.item(0);
     console.log(event.target.files.item(0));
 
@@ -65,7 +69,8 @@ export class SellitemComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.controls['name'].valid && form.controls['price'].valid)
+    this.currentItem.location = `${this.city}, ${this.state}`
+    console.log(this.currentItem)
     if (form.controls['name'].valid && form.controls['price'].valid) {
       this.submitting = true;
       console.log(this.currentItem);

@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NavComponent } from '../nav/nav.component';
+import { Component } from '@angular/core';
 import { LoginService } from 'src/app/service/login/login.service';
-import { firstValueFrom, map } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({

@@ -132,6 +132,7 @@ To get a local copy up and running follow these simple steps.
 
 	[x] Image uploads to DB
 	[ ] Chat functionality
+  [ ] Image Carousel for items
 </font>
 
 <!-- LICENSE -->

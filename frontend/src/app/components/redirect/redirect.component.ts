@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { LoginService } from 'src/app/service/login/login.service';
 import { TokenService } from 'src/app/service/token/token.service';
 import { ACCESS_TOKEN } from 'src/app/service/utils';

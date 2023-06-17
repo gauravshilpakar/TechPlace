@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Items, User } from 'src/app/models/items';
 import { ItemsService } from 'src/app/service/items/items.service';

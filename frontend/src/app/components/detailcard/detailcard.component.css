@@ -1,0 +1,10 @@
+.listeddate:hover .hide {
+  display: none;
+}
+
+.listeddate:hover .show{
+	display: inline-block;
+}
+.show {
+	display: none;
+  }

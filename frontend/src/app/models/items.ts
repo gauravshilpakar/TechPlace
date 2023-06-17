@@ -5,7 +5,9 @@ export interface Items{
     price: String,
     availability: boolean,
     imageUrl: any,
-    userId: number
+    userId: number,
+    location: String,
+    datePosted: Date
 }
 
 export interface User{

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, from, map } from 'rxjs';
+import { map } from 'rxjs';
 import { User } from 'src/app/models/items';
 import { UserService } from 'src/app/service/user/user.service';
 import { CONSTANT_DELAY } from 'src/app/service/utils';

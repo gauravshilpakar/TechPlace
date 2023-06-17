@@ -1,4 +1,4 @@
-import { Component, DoCheck, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ItemsService } from '../../service/items/items.service';
 import { Items } from '../../models/items';
 import { Router } from '@angular/router';

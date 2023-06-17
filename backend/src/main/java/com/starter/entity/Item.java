@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.util.Date;
+
 @Data
 @Entity
 @Table(name = "item", schema = "public")
@@ -21,6 +23,9 @@ public class Item {
     private String description;
     private Double price;
     private boolean availability;
+    private String location;
+    @Column(name = "date_posted")
+    private Date datePosted;
     @Lob
     @JdbcTypeCode(SqlTypes.BINARY)
     private byte[] imageUrl = null;

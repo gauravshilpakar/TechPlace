@@ -13,12 +13,17 @@
   <!-- DESCRIPTION -->
   <div class="bg-white border rounded h-full grid p-3">
     <h1
-      class="flex justify-between items-center mb-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">
+      class="break-words flex justify-between items-center mb-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">
       {{ currentItem.name }}
     </h1>
-    <span class="text-2xl font-bold text-gray-900 dark:text-white">${{currentItem.price}}
+    <span class="break-all text-2xl font-bold text-gray-900 dark:text-white">${{currentItem.price}}
     </span>
-    <div class="overflow-auto h-48">
+    <div id="listeddate" class="listeddate text-sm text-gray-400 dark:text-white">Listed 
+      <span class="hide" > {{currentItem.datePosted | dateAgo}} </span>
+      <span class="show"> {{currentItem.datePosted | date}} </span>
+      in {{currentItem.location}}.
+    </div>
+    <div class="break-words overflow-auto h-48">
       {{ currentItem.description }}
     </div>
     <!-- User -->
