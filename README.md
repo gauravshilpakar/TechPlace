@@ -75,11 +75,13 @@ To get a local copy up and running follow these simple steps.
 ### Installation
 
 1. Create a Github OAUTH App. <br>https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app
- <font size=1>
+ 	<font size=1>
+ 
 	```
 	set Homepage URL and Authorization Callback URL as
 	http://localhost:4200
 	```
+ 
 	</font>
 
 2. Clone the repo
@@ -99,23 +101,27 @@ To get a local copy up and running follow these simple steps.
    </font>
 
 4. Create a `.env` file in the backend directory and enter your Github Secrets as
-   <font size=1>
-  	 ```
-   	GITHUB_CLIENT_ID=***
-    GITHUB_CLIENT_SECRET=***
-   	```
-   </font>
+  	 <font size=1>
 
+	```
+	GITHUB_CLIENT_ID=***
+	GITHUB_CLIENT_SECRET=***
+	```
+
+   	</font>
+	
   <p align="center">
     <img height="200px" src='./frontend/src/assets/ENV.jpg'>
   </p>
 
 5. Start both frontend and backend applications.
-<font size=1>
+	<font size=1>
+
 	```
 	frontend: localhost:4200
 	backend: localhost:8080
 	```
+ 
 	</font>
 
 <!-- USAGE EXAMPLES -->
@@ -130,9 +136,9 @@ To get a local copy up and running follow these simple steps.
 ## TODO
 <font size=1>
 
-  - [x] Image uploads to DB
-	- [ ] Chat functionality
-  - [ ] Image Carousel for items
+- [x] Image uploads to DB
+- [ ] Chat functionality
+- [ ] Image Carousel for items
 
 </font>
 
