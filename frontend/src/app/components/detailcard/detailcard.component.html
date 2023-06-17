@@ -1,0 +1,50 @@
+<div *ngIf="currentItem" class="relative w-full max-w-5xl max-h-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+  <!-- Modal content -->
+  <div class="bg-white  aspect-square border rounded col-span-2">
+    <img *ngIf="currentItem.imageUrl && currentItem.id==-1"
+      class="w-full aspect-square object-cover p-2 rounded-t-lg" [src]="currentItem.imageUrl"
+      alt="product image" />
+    <img *ngIf="currentItem.imageUrl && currentItem.id!=-1"
+      class="w-full aspect-square object-cover p-2 rounded-t-lg" src="data:image/JPEG;base64,{{currentItem.imageUrl}}"
+      alt="product image" />
+    <img *ngIf="!currentItem.imageUrl" class="w-full aspect-square object-cover p-2 rounded-t-lg"
+      src="../../../assets/PLACEHOLDER.jpg" alt="product image" />
+  </div>
+  <!-- DESCRIPTION -->
+  <div class="bg-white border rounded h-full grid p-3">
+    <h1
+      class="flex justify-between items-center mb-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">
+      {{ currentItem.name }}
+    </h1>
+    <span class="text-2xl font-bold text-gray-900 dark:text-white">${{currentItem.price}}
+    </span>
+    <div class="overflow-auto h-48">
+      {{ currentItem.description }}
+    </div>
+    <!-- User -->
+    <div>Posted By</div>
+    <span *ngIf="currentUser">
+      <div *ngIf="sellItemPage" class="flex flex-wrap items-center justify-end">
+        <img class="m-2 w-8 h-8 rounded-full shadow-lg" src="{{currentUser.avatarUrl}}" alt="Bonnie image" />
+        <div>{{currentUser.name}}</div>
+      </div>
+      <div *ngIf="!sellItemPage" class="flex flex-wrap items-center justify-end">
+        <img class="m-2 w-8 h-8 rounded-full shadow-lg" src="{{currentUser.avatarUrl}}" alt="Bonnie image" />
+        <div>{{currentUser.name}}</div>
+      </div>
+    </span>
+    
+    <!-- End User -->
+    <div *ngIf="currentItem.availability" class="flex justify-end items-center gap-2">
+      <button href="#"
+        class="flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        Message Seller!
+      </button>
+    </div>
+    <div *ngIf="!currentItem.availability" class="flex justify-end items-center">
+      <button type="button"
+        class="cursor-not-allowed text-white bg-gray-400 dark:bg-blue-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+        disabled>Sold Out!</button>
+    </div>
+  </div>
+</div>
