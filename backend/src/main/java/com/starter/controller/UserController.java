@@ -9,7 +9,7 @@ import org.springframework.web.client.HttpClientErrorException;
 
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = {"${app.cors.origins}"})
 public class UserController {
     @Autowired
     UserService userService;

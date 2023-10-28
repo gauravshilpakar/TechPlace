@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @Slf4j
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", exposedHeaders = {"Access-Control-Allow-Origin"})
+@CrossOrigin(origins = {"${app.cors.origins}"})
 public class GithubUserController {
 
     @Autowired

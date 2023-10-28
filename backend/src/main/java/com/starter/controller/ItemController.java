@@ -17,7 +17,7 @@ import java.util.Optional;
 @Slf4j
 @RestController
 @RequestMapping("/api/items")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = {"${app.cors.origins}"})
 public class ItemController {
     @Autowired
     private ItemRepository itemRepository;
@@ -39,12 +39,9 @@ public class ItemController {
     }
     @PostMapping("/save")
     Item saveItem(@RequestParam("item") String item, @RequestParam("file") MultipartFile file) throws IOException {
-//        item.setImageUrl(file.getBytes());
-
         ObjectMapper objectMapper = new ObjectMapper();
         Item newItem = objectMapper.readValue(item, Item.class);
         newItem.setImageUrl(file.getBytes());
-        log.info("Item received: {}", newItem);
         return itemService.updateItem(newItem);
     }
 
