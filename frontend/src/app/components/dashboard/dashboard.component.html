@@ -4,95 +4,94 @@
 			<h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">User settings</h1>
 		</div>
 		<!-- Right Content -->
-		
+
 		<div class="col-span-2">
 
 			<!-- <div class="col-span-full "> -->
-				<div
-					class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
-					<div class="items-center sm:flex xl:block 2xl:flex sm:space-x-4 xl:space-x-0 2xl:space-x-4">
-						<img class="mb-4 rounded-full w-28 h-28 sm:mb-0 xl:mb-4 2xl:mb-0" height="30" width="30"
-							ngSrc="{{currentUser.avatarUrl}}" alt="Jese picture">
-						<div>
-							<h3 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">{{currentUser.name}}</h3>
-							<div class="mb-4 text-sm text-gray-500 dark:text-gray-400">
-								{{currentUser.email}}
-							</div>
-						</div>
-					</div>
-				</div>
-	
-				<div
-					class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
-					<div class="flow-root">
-						<h3 class="text-xl font-semibold dark:text-white">Your Listings</h3>
-						<ul class="mb-6 divide-y divide-gray-200 dark:divide-gray-700">
-							<li *ngFor="let item of currentUserItems" class="py-4">
-								<div class="flex justify-between xl:block 2xl:flex align-center 2xl:space-x-4">
-									<div class="flex space-x-4 xl:mb-4 2xl:mb-0">
-										<div>
-											<img class="w-12 h-12 rounded-full" src="data:image/JPEG;base64,{{item.imageUrl}}"
-												alt="Bonnie image">
-										</div>
-										<div class="flex-1 min-w-0">
-											<p
-												class="text-base font-semibold text-gray-900 leading-none truncate mb-0.5 dark:text-white">
-												{{item.name}}
-											</p>
-											<p
-												class="mb-1 text-sm font-normal truncate text-primary-700 dark:text-primary-500">
-												${{item.price}}
-											</p>
-											<p class="text-xs font-medium text-gray-500 dark:text-gray-400">
-												Posted: {{item.datePosted|dateAgo}}
-											</p>
-											<span *ngIf="item.availability"
-												class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-												<span class="w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
-												Available
-											</span>
-											<span *ngIf="!item.availability"
-												class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-												<span class="w-2 h-2 mr-1 bg-red-500 rounded-full"></span>
-												Unavailable
-											</span>
-										</div>
-									</div>
-									<div class="flex items-center invisible xl:visible">
-										{{item.description}}
-									</div>
-									<div class="flex items-center space-x-4">
-										<button (click)="handleEdit(item.id)" type="button"
-											class="py-2 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-											Edit
-										</button>
-										<button (click)="toggleDeleteModal(item.id)" type="button"
-											class="py-2 px-3 text-sm font-medium text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300  rounded-lg mr-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
-											Delete
-										</button>
-									</div>
-								</div>
-							</li>
-	
-						</ul>
-						<div>
-							<button
-								class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Save
-								all</button>
+			<div
+				class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+				<div class="items-center sm:flex xl:block 2xl:flex sm:space-x-4 xl:space-x-0 2xl:space-x-4">
+					<img class="mb-4 rounded-full w-28 h-28 sm:mb-0 xl:mb-4 2xl:mb-0" height="30" width="30"
+						ngSrc="{{currentUser.avatarUrl}}" alt="Jese picture">
+					<div>
+						<h3 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">{{currentUser.name}}</h3>
+						<div class="mb-4 text-sm text-gray-500 dark:text-gray-400">
+							{{currentUser.email}}
 						</div>
 					</div>
 				</div>
 			</div>
+
+			<div
+				class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+				<div class="flow-root">
+					<h3 class="text-xl font-semibold dark:text-white">Your Listings</h3>
+					<ul class="mb-6 divide-y divide-gray-200 dark:divide-gray-700">
+						<li *ngFor="let item of currentUserItems" class="py-4">
+							<div class="flex justify-between xl:block 2xl:flex align-center 2xl:space-x-4">
+								<div class="flex space-x-4 xl:mb-4 2xl:mb-0">
+									<div>
+										<img class="w-12 h-12 rounded-full"
+											src="data:image/JPEG;base64,{{item.imageUrl}}" alt="Bonnie image">
+									</div>
+									<div class="flex-1 min-w-0">
+										<p
+											class="text-base font-semibold text-gray-900 leading-none truncate mb-0.5 dark:text-white">
+											{{item.name}}
+										</p>
+										<p
+											class="mb-1 text-sm font-normal truncate text-primary-700 dark:text-primary-500">
+											${{item.price}}
+										</p>
+										<p class="text-xs font-medium text-gray-500 dark:text-gray-400">
+											Posted: {{item.datePosted|dateAgo}}
+										</p>
+										<span *ngIf="item.availability"
+											class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+											<span class="w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
+											Available
+										</span>
+										<span *ngIf="!item.availability"
+											class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
+											<span class="w-2 h-2 mr-1 bg-red-500 rounded-full"></span>
+											Unavailable
+										</span>
+									</div>
+								</div>
+								<div class="flex items-center invisible xl:visible">
+									{{item.description}}
+								</div>
+								<div class="flex items-center space-x-4">
+									<button (click)="handleEdit(item.id)" type="button"
+										class="py-2 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+										Edit
+									</button>
+									<button (click)="toggleDeleteModal(item.id)" type="button"
+										class="py-2 px-3 text-sm font-medium text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300  rounded-lg mr-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+										Delete
+									</button>
+								</div>
+							</div>
+						</li>
+
+					</ul>
+					<div>
+						<button
+							class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Save
+							all</button>
+					</div>
+				</div>
+			</div>
 		</div>
-
-	<!-- </div> -->
-
+	</div>
 </div>
 
-<!-- Delete Modal -->
+
+
 <div *ngIf="showDeleteModal"
-	class="modal overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+	class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
 	<div class="relative w-auto my-6 mx-auto max-w-3xl">
+		<!--content-->
 		<div class="relative w-full max-w-md max-h-full">
 			<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
 				<button (click)="toggleDeleteModal(selectedItemForDeletion.id)" type="button"
@@ -137,17 +136,24 @@
 						No
 					</button>
 
-					<div *ngIf="errorOccurred" class="flex p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-						<svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+					<div *ngIf="errorOccurred"
+						class="flex p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+						role="alert">
+						<svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor"
+							viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd"
+								d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+								clip-rule="evenodd"></path>
+						</svg>
 						<span class="sr-only">Info</span>
 						<div>
-						  <span class="font-semibold">Error Occurred!</span> Change a few things up and try submitting again.
+							<span class="font-semibold">Error Occurred!</span> Change a few things up and try submitting
+							again.
 						</div>
-					  </div>
+					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>
 <div *ngIf="showDeleteModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>

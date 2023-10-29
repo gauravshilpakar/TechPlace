@@ -59,8 +59,6 @@ export class DashboardComponent implements OnInit {
           console.log("Error "+msg.error)
           this.loading = false;
           this.errorOccurred = true;
-          console.log(this.errorOccurred)
-          console.log(this.loading)
         }
       });
     }, CONSTANT_DELAY);
@@ -71,8 +69,11 @@ export class DashboardComponent implements OnInit {
       const item = this.currentUserItems.find((data) => data.id === id);
       this.selectedItemForDeletion = item;
     }
-  
     this.showDeleteModal = !this.showDeleteModal;
+  }
+  showModal = false;
+  toggleModal(){
+
   }
 }
 
