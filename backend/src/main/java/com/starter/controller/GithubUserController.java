@@ -15,6 +15,7 @@ import java.util.UUID;
 
 @Slf4j
 @RestController
+@RequestMapping("/api")
 @CrossOrigin(origins = {"${app.cors.origins}"})
 public class GithubUserController {
 
