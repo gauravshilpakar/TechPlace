@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
-  daisyui: {
-darkTheme: false,
-  },
   content: ["./src/**/*.{html,ts}", "./node_modules/flowbite/**/*.js"],
   theme: {
     extend: {
@@ -13,11 +10,9 @@ darkTheme: false,
       },
       gridTemplateRows: {
         // Simple 16 column grid
-        '3fit': "fit-content(8rem) auto fit-content(8rem)"
-
-      }
+        "3fit": "fit-content(8rem) auto fit-content(8rem)",
+      },
     },
   },
-  plugins: [require('flowbite/plugin'), require("daisyui")],
+  plugins: [require("flowbite/plugin")],
 };
-
